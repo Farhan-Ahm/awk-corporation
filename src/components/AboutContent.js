@@ -131,7 +131,7 @@ export default function AboutContent() {
                 />
               <h3 className={styles.cardTitle}>Our Mission</h3>
               <p className={styles.cardText}>
-                To deliver reliable, high-quality engineering and construction services that meet our clients' goals with safety and integrity.
+                To deliver reliable, high-quality engineering and construction services that meet our clients goals with safety and integrity.
               </p>
             </div>
           </div>
