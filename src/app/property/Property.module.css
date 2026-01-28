@@ -1,4 +1,4 @@
-/* Engineering.module.css */
+/* Property.module.css */
 
 .aboutSection {
   padding: 50px 0;
@@ -20,13 +20,13 @@
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  margin-top: 0px; /* Move image up on desktop */
+  margin-top: 0px;
   margin-bottom: 20px;
-  
 }
+
 @media (max-width: 991px) {
   .imageWrapper {
-    margin-top: 0; /* Remove negative margin on tablet and below */
+    margin-top: 0;
   }
 }
 
@@ -191,7 +191,7 @@
   line-height: 1.7;
   margin: 0;
   transition: color 0.4s ease;
-   text-align: left;
+  text-align: left;
 }
 
 .coreValueCard:hover .coreValueDescription {
@@ -367,18 +367,16 @@
 }
 /* ========== END NEW EXPLORE CARD STYLES ========== */
 
-/* HERO SECTION */
+/* HERO SECTION - UPDATED TO MATCH ENGINEERING */
 .aboutHero {
   position: relative;
-  height: 400px;
+  height: 350px; /* Changed from 400px to match Engineering (350px) */
   background-image: url('/images/prop-banner.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .heroOverlay {
@@ -398,26 +396,167 @@
   color: white;
   padding: 0 20px;
   max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BREADCRUMB STYLES - UPDATED TO MATCH ENGINEERING EXACTLY */
+.breadcrumbWrapper {
+  position: absolute;
+  bottom: 0px; /* Position at bottom */
+  left: 0px; /* Position at left side */
+  z-index: 3;
+  display: flex;
+  justify-content: flex-start; /* Align left */
+  width: auto;
+  /* Removed padding to match Engineering style */
+}
+
+.breadcrumbNav {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 10px 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: auto;
+  display: inline-block;
+}
+
+.breadcrumbList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items left */
+  gap: 5px;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.breadcrumbLink:hover {
+  color: white;
+  background: rgba(228, 12, 41, 0.15);
+}
+
+.breadcrumbLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #E40C29;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.breadcrumbLink:hover::after {
+  width: 70%;
+  box-shadow: 0 0 10px rgba(228, 12, 41, 0.5);
+}
+
+.homeIcon {
+  stroke: rgba(255, 255, 255, 0.9);
+  transition: stroke 0.3s ease;
+}
+
+.breadcrumbLink:hover .homeIcon {
+  stroke: white;
+}
+
+.breadcrumbSeparator {
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+}
+
+.breadcrumbSeparator svg {
+  stroke: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumbCurrent {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 15px;
+  background: rgba(228, 12, 41, 0.2);
+  border-radius: 20px;
+  border: 1px solid rgba(228, 12, 41, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.breadcrumbCurrent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 .heroTitle {
-  font-size: 56px;
+  font-size: 48px; /* Changed from 56px to match Engineering (48px) */
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Changed from 20px to match Engineering (15px) */
   letter-spacing: 2px;
   text-transform: uppercase;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   animation: fadeInUp 1s ease-out;
+  position: relative;
+  z-index: 2;
 }
 
 .heroBreadcrumb {
-  font-size: 20px;
+  font-size: 18px; /* Changed from 20px to match Engineering (18px) */
   color: rgba(255, 255, 255, 0.95);
-  margin: 0;
+  margin: 0 auto;
   font-weight: 400;
   letter-spacing: 0.5px;
   animation: fadeInUp 1.2s ease-out;
+  padding: 0 10px;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 60px; /* Add space at bottom for breadcrumb */
 }
 
 @keyframes fadeInUp {
@@ -431,7 +570,7 @@
   }
 }
 
-/* Learn More Button - MOVED OUTSIDE MEDIA QUERIES */
+/* Learn More Button */
 .learnMoreBtn {
   display: inline-block;
   margin-top: 25px;
@@ -470,17 +609,17 @@
   border-color: #E40C29;
 }
 
-
-/* MEDIA QUERIES */
+/* MEDIA QUERIES - UPDATED TO MATCH ENGINEERING RESPONSIVENESS */
 
 /* Tablet */
 @media (max-width: 992px) {
   .aboutSection {
-    padding: 50px 0;
+    padding: 30px 0 40px; /* Changed to match Engineering */
   }
 
   .title {
-    font-size: 36px;
+    font-size: 34px; /* Changed to match Engineering */
+    margin-bottom: 15px; /* Changed to match Engineering */
   }
 
   .features {
@@ -488,109 +627,213 @@
   }
 
   .coreValuesContainer {
-    padding: 0 30px;
+    padding: 0 20px; /* Changed to match Engineering */
   }
 
   .coreValuesTitle {
-    font-size: 32px;
+    font-size: 30px; /* Changed to match Engineering */
   }
 
   .coreValuesSubtitle {
-    font-size: 16px;
+    font-size: 16px; /* Changed to match Engineering */
+    margin-bottom: 10px; /* Changed to match Engineering */
+  }
+
+  .sectionHeader {
+    margin-bottom: 20px; /* Changed to match Engineering */
   }
 
   .coreValueCard {
-    padding: 30px 20px;
-    margin: 0 8px;
+    padding: 25px 20px; /* Changed to match Engineering */
+    margin: 0 10px 15px; /* Changed to match Engineering */
   }
 
   .coreValueTitle {
-    font-size: 22px;
+    font-size: 20px; /* Changed to match Engineering */
+    min-height: 50px; /* Added to match Engineering */
   }
 
   .coreValueDescription {
-    font-size: 15px;
-    
+    font-size: 14px; /* Changed to match Engineering */
+    line-height: 1.5; /* Changed to match Engineering */
   }
 
   .aboutHero {
-    height: 400px;
+    height: 300px; /* Changed to match Engineering */
+    margin-bottom: 20px; /* Added to match Engineering */
   }
 
   .heroTitle {
-    font-size: 46px;
+    font-size: 40px; /* Changed to match Engineering */
+    margin-bottom: 10px; /* Changed to match Engineering */
   }
 
   .heroBreadcrumb {
-    font-size: 18px;
+    font-size: 16px; /* Changed to match Engineering */
+    margin-bottom: 50px; /* Changed to match Engineering */
+  }
+
+  /* Breadcrumb responsive for tablet - MATCHING ENGINEERING */
+  .breadcrumbWrapper {
+     padding: 12px 15px; /* Added to match Engineering */
+  }
+  
+  .breadcrumbNav {
+     padding: 10px 20px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink {
+    font-size: 13px; /* Changed to match Engineering */
+    padding: 4px 8px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbCurrent {
+    font-size: 13px; /* Changed to match Engineering */
+    padding: 4px 12px; /* Changed to match Engineering */
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .aboutSection {
-    padding: 40px 0;
+    padding: 20px 0 30px; /* Changed to match Engineering */
+  }
+
+  .descriptionFullWidth {
+    padding: 0 10px; /* Changed to match Engineering */
+    margin-bottom: 10px; /* Changed to match Engineering */
+    font-size: 15px; /* Changed to match Engineering */
   }
 
   .aboutText {
-    padding: 30px 0 0;
+    padding: 20px 0 0; /* Changed to match Engineering */
   }
 
   .title {
-    font-size: 32px;
+    font-size: 28px; /* Changed to match Engineering */
+    margin-bottom: 15px; /* Changed to match Engineering */
   }
 
   .description {
-    font-size: 15px;
+    font-size: 15px; /* Changed to match Engineering */
+    margin-bottom: 12px; /* Changed to match Engineering */
   }
 
   .coreValuesContainer {
-    padding: 0 20px;
+    padding: 0 15px; /* Changed to match Engineering */
   }
 
   .coreValuesTitle {
-    font-size: 28px;
+    font-size: 26px; /* Changed to match Engineering */
+  }
+
+  .coreValuesSubtitle {
+    font-size: 15px; /* Changed to match Engineering */
+    margin-bottom: 8px; /* Changed to match Engineering */
   }
 
   .sectionHeader {
-    margin-bottom: 30px;
-    padding: 0 10px;
+    margin-bottom: 15px; /* Changed to match Engineering */
+    padding: 0 5px; /* Changed to match Engineering */
   }
 
   .coreValueCard {
-    padding: 25px 15px;
-    margin: 0 5px 20px;
+    padding: 20px 15px; /* Changed to match Engineering */
+    margin: 0 5px 15px; /* Changed to match Engineering */
   }
 
   .coreValueIcon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 20px;
+    width: 50px; /* Changed to match Engineering */
+    height: 50px; /* Changed to match Engineering */
+    margin-bottom: 15px; /* Changed to match Engineering */
   }
 
   .coreValueIcon svg {
-    width: 30px;
-    height: 30px;
+    width: 24px; /* Changed to match Engineering */
+    height: 24px; /* Changed to match Engineering */
+  }
+
+  .coreValueTitle {
+    font-size: 18px; /* Changed to match Engineering */
+    min-height: 45px; /* Added to match Engineering */
+    margin-bottom: 12px; /* Changed to match Engineering */
+  }
+
+  .coreValueDescription {
+    font-size: 13px; /* Changed to match Engineering */
+    line-height: 1.4; /* Changed to match Engineering */
   }
 
   .aboutHero {
-    height: 350px;
-    background-attachment: scroll;
+    height: 250px; /* Changed to match Engineering */
+    background-attachment: scroll; /* Changed to match Engineering */
+    margin-bottom: 15px; /* Added to match Engineering */
   }
 
   .heroTitle {
-    font-size: 36px;
-    letter-spacing: 1px;
+    font-size: 30px; /* Changed to match Engineering */
+    letter-spacing: 1px; /* Changed to match Engineering */
+    margin-bottom: 8px; /* Changed to match Engineering */
   }
 
   .heroBreadcrumb {
-    font-size: 16px;
+    font-size: 14px; /* Changed to match Engineering */
+    padding: 0 5px; /* Changed to match Engineering */
+    margin-bottom: 40px; /* Changed to match Engineering */
+  }
+
+  /* Breadcrumb responsive for mobile - MATCHING ENGINEERING */
+  .breadcrumbWrapper {
+     padding: 10px 12px; /* Added to match Engineering */
+  }
+  
+  .breadcrumbNav {
+     padding: 8px 15px; /* Changed to match Engineering */
+    backdrop-filter: blur(5px); /* Changed to match Engineering */
+    -webkit-backdrop-filter: blur(5px); /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink {
+    font-size: 12px; /* Changed to match Engineering */
+    padding: 3px 6px; /* Changed to match Engineering */
+    gap: 4px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink span {
+     display: none; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink .homeIcon {
+    display: block; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbSeparator {
+    padding: 0 1px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbSeparator svg {
+    width: 10px; /* Changed to match Engineering */
+    height: 10px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbCurrent {
+    font-size: 12px; /* Changed to match Engineering */
+    padding: 3px 10px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbCurrent span {
+    display: inline; /* Changed to match Engineering */
   }
 }
 
+/* Small Mobile */
 @media (max-width: 576px) {
+  .aboutSection {
+    padding: 15px 0 25px; /* Changed to match Engineering */
+  }
+
   .title {
-    font-size: 28px;
+    font-size: 24px; /* Changed to match Engineering */
   }
 
   .features {
@@ -602,42 +845,97 @@
   }
 
   .coreValuesContainer {
-    padding: 0 15px;
+    padding: 0 10px; /* Changed to match Engineering */
   }
 
   .coreValuesTitle {
-    font-size: 24px;
+    font-size: 22px; /* Changed to match Engineering */
   }
 
   .coreValuesSubtitle {
-    font-size: 14px;
+    font-size: 14px; /* Changed to match Engineering */
   }
 
   .coreValueCard {
-    padding: 20px 12px;
-    margin: 0 0 20px;
+    padding: 18px 12px; /* Changed to match Engineering */
+    margin: 0 0 12px; /* Changed to match Engineering */
   }
 
   .coreValueTitle {
-    font-size: 20px;
+    font-size: 17px; /* Changed to match Engineering */
+    min-height: 40px; /* Added to match Engineering */
+    margin-bottom: 10px; /* Added to match Engineering */
   }
 
   .coreValueDescription {
-    font-size: 14px;
+    font-size: 12px; /* Changed to match Engineering */
+    line-height: 1.3; /* Changed to match Engineering */
   }
 
   .aboutHero {
-    height: 300px;
+    height: 200px; /* Changed to match Engineering */
+    margin-bottom: 10px; /* Added to match Engineering */
   }
 
   .heroTitle {
-    font-size: 28px;
+    font-size: 24px; /* Changed to match Engineering */
+    margin-bottom: 5px; /* Changed to match Engineering */
   }
 
   .heroBreadcrumb {
-    font-size: 14px;
+    font-size: 13px; /* Changed to match Engineering */
+    margin-bottom: 30px; /* Changed to match Engineering */
   }
 
-
+  /* Breadcrumb responsive for small mobile - MATCHING ENGINEERING */
+  .breadcrumbWrapper {
+    padding: 8px 10px; /* Added to match Engineering */
+  }
   
+  .breadcrumbNav {
+    padding: 6px 12px; /* Changed to match Engineering */
+    border-radius: 0 20px 0 0; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink {
+    padding: 2px 4px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbCurrent {
+    padding: 2px 8px; /* Changed to match Engineering */
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .coreValueCard {
+    padding: 15px 10px; /* Changed to match Engineering */
+  }
+  
+  .coreValueTitle {
+    font-size: 16px; /* Changed to match Engineering */
+    min-height: 35px; /* Added to match Engineering */
+  }
+  
+  .coreValueDescription {
+    font-size: 11px; /* Changed to match Engineering */
+  }
+
+  /* Breadcrumb responsive for extra small - MATCHING ENGINEERING */
+  .breadcrumbWrapper {
+     padding: 6px 8px; /* Added to match Engineering */
+  }
+  
+  .breadcrumbNav {
+    padding: 5px 10px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink {
+    font-size: 11px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbCurrent {
+    font-size: 11px; /* Changed to match Engineering */
+    padding: 2px 6px; /* Changed to match Engineering */
+  }
 }

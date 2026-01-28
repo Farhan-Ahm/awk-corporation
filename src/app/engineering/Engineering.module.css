@@ -1,7 +1,210 @@
 /* Engineering.module.css */
 
+/* HERO SECTION */
+.aboutHero {
+  position: relative;
+  height: 350px;
+  background-image: url('/images/automationsystem.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.85);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Creative Breadcrumb Styles - BOTTOM LEFT CORNER */
+.breadcrumbWrapper {
+  position: absolute;
+  bottom: 0px; /* Position at bottom */
+  left: 0px; /* Position at left side */
+  z-index: 3;
+  display: flex;
+  justify-content: flex-start; /* Align left */
+  width: auto;
+}
+
+.breadcrumbNav {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 10px 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: auto;
+  display: inline-block;
+}
+
+.breadcrumbList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items left */
+  gap: 5px;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.breadcrumbLink:hover {
+  color: white;
+  background: rgba(228, 12, 41, 0.15);
+}
+
+.breadcrumbLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #E40C29;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.breadcrumbLink:hover::after {
+  width: 70%;
+  box-shadow: 0 0 10px rgba(228, 12, 41, 0.5);
+}
+
+.homeIcon {
+  stroke: rgba(255, 255, 255, 0.9);
+  transition: stroke 0.3s ease;
+}
+
+.breadcrumbLink:hover .homeIcon {
+  stroke: white;
+}
+
+.breadcrumbSeparator {
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+}
+
+.breadcrumbSeparator svg {
+  stroke: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumbCurrent {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 15px;
+  background: rgba(228, 12, 41, 0.2);
+  border-radius: 20px;
+  border: 1px solid rgba(228, 12, 41, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.breadcrumbCurrent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.heroTitle {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+.heroBreadcrumb {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 auto;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 1.2s ease-out;
+  padding: 0 10px;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 60px; /* Add space at bottom for breadcrumb */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MAIN CONTENT SECTION */
 .aboutSection {
-  padding: 50px 0;
+  padding: 30px 0 50px;
   background: white;
 }
 
@@ -9,10 +212,10 @@
   color: #666;
   font-size: 16px;
   line-height: 1.8;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-align: justify;
   margin-top: 2px;
-  padding: 0 0px;
+  padding: 0 15px;
 }
 
 .imageWrapper {
@@ -20,11 +223,12 @@
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  /*margin-top: -10px; /* Move image up on desktop */
+  margin-bottom: 30px;
 }
+
 @media (max-width: 991px) {
   .imageWrapper {
-    margin-top: 0; /* Remove negative margin on tablet and below */
+    margin-top: 0;
   }
 }
 
@@ -55,7 +259,7 @@
   font-size: 42px;
   font-weight: bold;
   color: #2C3E50;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   line-height: 1.2;
 }
 
@@ -63,36 +267,8 @@
   color: #666;
   font-size: 16px;
   line-height: 1.8;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-align: justify;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-top: 30px;
-}
-
-.feature {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  color: #2C3E50;
-}
-
-.checkIcon {
-  background: #E40C29;
-  color: white;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  flex-shrink: 0;
 }
 
 /* CORE VALUES SECTION */
@@ -104,7 +280,7 @@
 
 .sectionHeader {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   padding: 0 15px;
 }
 
@@ -119,12 +295,12 @@
   color: #666;
   font-size: 18px;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 15px;
 }
 
 .coreValueCard {
   background: #f8f9fa;
-  padding: 40px 30px;
+  padding: 30px 25px;
   border-radius: 10px;
   text-align: center;
   height: 100%;
@@ -133,20 +309,20 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  margin: 0 10px;
+  margin-bottom: 20px;
 }
 
 .coreValueCard:hover {
   background: #2C3E50;
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   border-color: #2C3E50;
 }
 
 .coreValueIcon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 25px;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,11 +333,13 @@
 
 .coreValueCard:hover .coreValueIcon {
   background: white;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .coreValueIcon svg {
   color: white;
+  width: 28px;
+  height: 28px;
   transition: all 0.4s ease;
 }
 
@@ -170,11 +348,15 @@
 }
 
 .coreValueTitle {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   color: #2C3E50;
   margin-bottom: 15px;
   transition: color 0.4s ease;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .coreValueCard:hover .coreValueTitle {
@@ -183,11 +365,11 @@
 
 .coreValueDescription {
   color: #666;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.6;
   margin: 0;
   transition: color 0.4s ease;
-   text-align: left;
+  text-align: left;
 }
 
 .coreValueCard:hover .coreValueDescription {
@@ -211,141 +393,17 @@
   transform: scaleX(1);
 }
 
-/* HERO SECTION */
-.aboutHero {
-  position: relative;
-  height: 400px;
-  background-image: url('/images/automationsystem.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.heroOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(44, 62, 80, 0.85);
-  z-index: 1;
-}
-
-.heroContent {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  padding: 0 20px;
-  max-width: 1200px;
-}
-
-.heroTitle {
-  font-size: 56px;
-  font-weight: 800;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 1s ease-out;
-}
-
-.heroBreadcrumb {
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.95);
-  margin: 0;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  animation: fadeInUp 1.2s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* MEDIA QUERIES */
 
 /* Tablet */
 @media (max-width: 992px) {
   .aboutSection {
-    padding: 50px 0;
+    padding: 30px 0 40px;
   }
 
   .title {
-    font-size: 36px;
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-  }
-
-  .coreValuesContainer {
-    padding: 0 30px;
-  }
-
-  .coreValuesTitle {
-    font-size: 32px;
-  }
-
-  .coreValuesSubtitle {
-    font-size: 16px;
-  }
-
-  .coreValueCard {
-    padding: 30px 20px;
-    margin: 0 8px;
-  }
-
-  .coreValueTitle {
-    font-size: 22px;
-  }
-
-  .coreValueDescription {
-    font-size: 15px;
-    
-  }
-
-  .aboutHero {
-    height: 400px;
-  }
-
-  .heroTitle {
-    font-size: 46px;
-  }
-
-  .heroBreadcrumb {
-    font-size: 18px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .aboutSection {
-    padding: 40px 0;
-  }
-
-  .aboutText {
-    padding: 30px 0 0;
-  }
-
-  .title {
-    font-size: 32px;
-  }
-
-  .description {
-    font-size: 15px;
+    font-size: 34px;
+    margin-bottom: 15px;
   }
 
   .coreValuesContainer {
@@ -353,56 +411,91 @@
   }
 
   .coreValuesTitle {
-    font-size: 28px;
+    font-size: 30px;
+  }
+
+  .coreValuesSubtitle {
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 
   .sectionHeader {
-    margin-bottom: 30px;
-    padding: 0 10px;
-  }
-
-  .coreValueCard {
-    padding: 25px 15px;
-    margin: 0 5px 20px;
-  }
-
-  .coreValueIcon {
-    width: 60px;
-    height: 60px;
     margin-bottom: 20px;
   }
 
-  .coreValueIcon svg {
-    width: 30px;
-    height: 30px;
+  .coreValueCard {
+    padding: 25px 20px;
+    margin-bottom: 15px;
+  }
+
+  .coreValueTitle {
+    font-size: 20px;
+    min-height: 50px;
+  }
+
+  .coreValueDescription {
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .aboutHero {
-    height: 350px;
-    background-attachment: scroll;
+    height: 300px;
+    margin-bottom: 20px;
   }
 
   .heroTitle {
-    font-size: 36px;
-    letter-spacing: 1px;
+    font-size: 40px;
+    margin-bottom: 10px;
   }
 
   .heroBreadcrumb {
     font-size: 16px;
+    margin-bottom: 50px;
+  }
+
+  .breadcrumbWrapper {
+     padding: 12px 15px;
+  }
+  
+  .breadcrumbNav {
+     padding: 10px 20px;
+  }
+  
+  .breadcrumbLink {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+  
+  .breadcrumbCurrent {
+    font-size: 13px;
+    padding: 4px 12px;
   }
 }
 
-@media (max-width: 576px) {
+/* Mobile */
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 20px 0 30px;
+  }
+
+  .descriptionFullWidth {
+    padding: 0 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  .aboutText {
+    padding: 20px 0 0;
+  }
+
   .title {
     font-size: 28px;
+    margin-bottom: 15px;
   }
 
-  .features {
-    gap: 10px;
-  }
-
-  .feature {
-    font-size: 14px;
+  .description {
+    font-size: 15px;
+    margin-bottom: 12px;
   }
 
   .coreValuesContainer {
@@ -410,7 +503,123 @@
   }
 
   .coreValuesTitle {
+    font-size: 26px;
+  }
+
+  .coreValuesSubtitle {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 15px;
+    padding: 0 5px;
+  }
+
+  .coreValueCard {
+    padding: 20px 15px;
+    margin-bottom: 15px;
+  }
+
+  .coreValueIcon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+
+  .coreValueIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .coreValueTitle {
+    font-size: 18px;
+    min-height: 45px;
+    margin-bottom: 12px;
+  }
+
+  .coreValueDescription {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .aboutHero {
+    height: 250px;
+    background-attachment: scroll;
+    margin-bottom: 15px;
+  }
+
+  .heroTitle {
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .heroBreadcrumb {
+    font-size: 14px;
+    padding: 0 5px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumbWrapper {
+     padding: 10px 12px;
+  }
+  
+  .breadcrumbNav {
+     padding: 8px 15px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+  
+  .breadcrumbLink {
+    font-size: 12px;
+    padding: 3px 6px;
+    gap: 4px;
+  }
+  
+  .breadcrumbLink span {
+     display: none;
+  }
+  
+  .breadcrumbLink .homeIcon {
+    display: block;
+  }
+  
+  .breadcrumbSeparator {
+    padding: 0 1px;
+  }
+  
+  .breadcrumbSeparator svg {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .breadcrumbCurrent {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+  
+  .breadcrumbCurrent span {
+    display: inline;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  .aboutSection {
+    padding: 15px 0 25px;
+  }
+
+  .title {
     font-size: 24px;
+  }
+
+  .coreValuesContainer {
+    padding: 0 10px;
+  }
+
+  .coreValuesTitle {
+    font-size: 22px;
   }
 
   .coreValuesSubtitle {
@@ -418,27 +627,87 @@
   }
 
   .coreValueCard {
-    padding: 20px 12px;
-    margin: 0 0 20px;
+    padding: 18px 12px;
+    margin-bottom: 12px;
   }
 
   .coreValueTitle {
-    font-size: 20px;
+    font-size: 17px;
+    min-height: 40px;
+    margin-bottom: 10px;
   }
 
   .coreValueDescription {
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .coreValueDescription li {
+    margin-bottom: 5px;
   }
 
   .aboutHero {
-    height: 300px;
+    height: 200px;
+    margin-bottom: 10px;
   }
 
   .heroTitle {
-    font-size: 28px;
+    font-size: 24px;
+    margin-bottom: 5px;
   }
 
   .heroBreadcrumb {
-    font-size: 14px;
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+
+  .breadcrumbWrapper {
+    padding: 8px 10px;
+  }
+  
+  .breadcrumbNav {
+    padding: 6px 12px;
+    border-radius: 0 20px 0 0;
+  }
+  
+  .breadcrumbLink {
+    padding: 2px 4px;
+  }
+  
+  .breadcrumbCurrent {
+    padding: 2px 8px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .coreValueCard {
+    padding: 15px 10px;
+  }
+  
+  .coreValueTitle {
+    font-size: 16px;
+    min-height: 35px;
+  }
+  
+  .coreValueDescription {
+    font-size: 11px;
+  }
+
+  .breadcrumbWrapper {
+     padding: 6px 8px;
+  }
+  
+  .breadcrumbNav {
+    padding: 5px 10px;
+  }
+  
+  .breadcrumbLink {
+    font-size: 11px;
+  }
+  
+  .breadcrumbCurrent {
+    font-size: 11px;
+    padding: 2px 6px;
   }
 }
