@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 import styles from './Services.module.css';
 
 export default function Services() {
@@ -10,25 +11,29 @@ export default function Services() {
      icon: '/images/building-svgrepo-com.svg',
       title: 'Construction',
       description: 'Delivering expert support that keeps your operations moving.',
-      color: '#2C3E50'
+      color: '#2C3E50',
+      link: '/construction'
     },
     {
        icon: '/images/engineer-config-svgrepo-com.svg',
       title: 'Engineering',
       description: 'Tailored solutions for infrastructure, energy, and industrial projects.',
-      color: '#2C3E50'
+      color: '#2C3E50',
+      link: '/engineering'
     },
     {
      icon: '/images/arrow-up-house-svgrepo-com.svg',
       title: 'Property Management',
       description: 'End-to-end property administration ensuring operational excellence.',
-      color: '#2C3E50'
+      color: '#2C3E50',
+      link: '/property'
     },
     {
         icon: '/images/chart-column-grow-svgrepo-com.svg',
       title: 'Investment Opportunities',
       description: 'Strategic partnerships in real estate and infrastructure development.',
-      color: '#2C3E50'
+      color: '#2C3E50',
+      link: '/investment'
     }
   ];
 
@@ -67,8 +72,9 @@ export default function Services() {
 
             <div className={styles.servicesGrid}>
               {services.map((service, index) => (
-                <div
+                <Link
                   key={index}
+                  href={service.link}
                   className={styles.serviceItem}
                   style={{
                     backgroundColor: hoveredService === index ? service.color : '#f8f9fa'
@@ -114,7 +120,17 @@ export default function Services() {
                       {service.description}
                     </p>
                   </div>
-                </div>
+                  <div 
+                    className={styles.serviceArrow}
+                    style={{
+                      color: hoveredService === index ? 'white' : '#FF9800'
+                    }}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                    </svg>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

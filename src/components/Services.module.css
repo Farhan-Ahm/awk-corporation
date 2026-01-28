@@ -1,6 +1,6 @@
 /* Services Section */
 .servicesSection {
-  padding: 80px 20px;
+  padding: 60px 20px;
   background-color: white;
   min-height: 100vh;
 }
@@ -148,17 +148,32 @@
   transition: all 0.3s ease;
   cursor: pointer;
   border: 1px solid #e0e0e0;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .serviceItem:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-color: #FF9800;
 }
 
 .serviceIcon {
   font-size: 48px;
   transition: color 0.3s ease;
   flex-shrink: 0;
+}
+
+.serviceIcon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.serviceItem:hover .serviceIcon img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
 }
 
 .serviceText {
@@ -177,6 +192,24 @@
   line-height: 1.6;
   margin: 0;
   transition: color 0.3s ease;
+}
+
+/* Arrow Icon */
+.serviceArrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceItem:hover .serviceArrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Tablet Responsive */
@@ -273,6 +306,14 @@
   .serviceIcon {
     font-size: 40px;
   }
+
+  /* Make arrow always visible on mobile */
+  .serviceArrow {
+    opacity: 1;
+    transform: translateX(0);
+    position: static;
+    margin-left: auto;
+  }
 }
 
 /* Small Mobile */
@@ -329,21 +370,8 @@
   .serviceIcon {
     font-size: 36px;
   }
-  
-  .serviceIcon img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  transition: filter 0.3s ease;
-}
-.serviceIcon img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  transition: filter 0.3s ease;
-}
 
-.serviceItem:hover .serviceIcon img {
-  filter: brightness(0) invert(1) drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
-}
+  .serviceArrow {
+    margin: 10px auto 0;
+  }
 }

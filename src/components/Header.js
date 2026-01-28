@@ -132,14 +132,16 @@ export default function Header() {
       {/* Main Navigation */}
       <nav className={styles.mainNav}>
         <div className={styles.navWrapper}>
-          <div className={styles.brandSection}>
+          
+            <Link href="/" className={styles.brandSection}>
             <img 
               src="/images/awk_logo.png" 
               alt="AWK Corporation Logo" 
               className={styles.logo}
             />
             <div className={styles.navbarBrand}>AWK CORPORATION</div>
-          </div>
+          </Link>
+         
           
           {/* Hamburger Menu Button with animation class */}
           <button 

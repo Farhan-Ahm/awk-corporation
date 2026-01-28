@@ -6,9 +6,10 @@ export default function Hero() {
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.pageYOffset;
-      const parallax = document.querySelector(`.${styles.heroSection}`);
-      if (parallax) {
-        parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+      const parallaxBg = document.querySelector(`.${styles.heroBackground}`);
+      if (parallaxBg) {
+        // Only apply parallax to the background, not the entire section
+        parallaxBg.style.transform = `translateY(${scrolled * 0.3}px)`;
       }
     };
 
@@ -19,6 +20,7 @@ export default function Hero() {
   return (
     <section className={styles.heroWrapper} id="home">
       <div className={styles.heroSection}>
+        <div className={styles.heroBackground}></div>
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>SINCE 2016</div>
