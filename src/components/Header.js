@@ -110,7 +110,7 @@ export default function Header() {
   return (
     <>
       {/* Top Bar */}
-      <div className={styles.topBar}>
+      {/*<div className={styles.topBar}>
         <div className="container">
           <div className={styles.topBarContent}>
             <div className={styles.topBarLeft}>
@@ -127,7 +127,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
 
       {/* Main Navigation */}
       <nav className={styles.mainNav}>
