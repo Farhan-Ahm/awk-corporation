@@ -1,0 +1,101 @@
+.aboutHero {
+  position: relative;
+  height: 400px;
+  background: url('/images/cleanenergy.jpg') center/cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.heroTitle {
+  font-size: 56px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
+  color: white;
+}
+
+
+.heroBreadcrumb {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  animation: fadeInUp 1.2s ease-out;
+  
+}
+
+.heroBreadcrumb a {
+  color: #FF9800;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.heroBreadcrumb a:hover {
+  color: #F57C00;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .aboutHero {
+    height: 350px;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .aboutHero {
+    height: 300px;
+    background-attachment: scroll;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .heroBreadcrumb {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .aboutHero {
+    height: 250px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+  }
+}

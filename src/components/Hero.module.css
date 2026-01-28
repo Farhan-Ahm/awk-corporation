@@ -1,0 +1,219 @@
+.heroWrapper {
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heroSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600') center/cover;
+  background-attachment: fixed;
+  will-change: transform;
+  z-index: 1;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  z-index: 2;
+}
+
+.heroContent {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  z-index: 100;
+  padding: 0 20px;
+}
+
+.heroContent h1 {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  animation: fadeInUp 1s ease-out;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 100;
+}
+
+.highlight {
+  color: #E40C29;
+}
+
+.heroBadge {
+  background: transparent;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  color: white;
+  padding: 12px 40px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  margin-top: -100px;
+  display: inline-block;
+  animation: fadeInDown 1s ease-out;
+  position: relative;
+  z-index: 100;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  animation: fadeInUp 1.2s ease-out;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 100;
+}
+
+.btnPrimary {
+  background: #FF9800;
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  z-index: 100;
+}
+
+.btnPrimary:hover {
+  background: #E40C29;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 16px 38px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  z-index: 100;
+}
+
+.btnSecondary:hover {
+  background: white;
+  color: #2C3E50;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .heroWrapper {
+    height: 600px;
+  }
+
+  .heroContent h1 {
+    font-size: 48px;
+  }
+
+  .heroBadge {
+    font-size: 12px;
+    padding: 10px 30px;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 15px 30px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .heroWrapper {
+    height: 500px;
+  }
+
+  .heroSection {
+    background-attachment: scroll;
+  }
+
+  .heroContent h1 {
+    font-size: 36px;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroWrapper {
+    height: 450px;
+  }
+
+  .heroContent h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .heroBadge {
+    font-size: 11px;
+    padding: 8px 25px;
+    margin-bottom: 20px;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 14px 25px;
+    font-size: 12px;
+  }
+}

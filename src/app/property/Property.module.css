@@ -1,0 +1,643 @@
+/* Engineering.module.css */
+
+.aboutSection {
+  padding: 50px 0;
+  background: white;
+}
+
+.descriptionFullWidth {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+  margin-top: 2px;
+  padding: 0 0px;
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin-top: 0px; /* Move image up on desktop */
+  margin-bottom: 20px;
+  
+}
+@media (max-width: 991px) {
+  .imageWrapper {
+    margin-top: 0; /* Remove negative margin on tablet and below */
+  }
+}
+
+.aboutImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+  height: 450px;
+  object-fit: cover;
+}
+
+.imageWrapper:hover .aboutImage {
+  transform: scale(1.05);
+}
+
+.aboutText {
+  padding: 0 15px;
+}
+
+.subtitle {
+  color: #E40C29;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: bold;
+  color: #2C3E50;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.description {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #2C3E50;
+}
+
+.checkIcon {
+  background: #E40C29;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* CORE VALUES SECTION */
+.coreValuesContainer {
+  padding: 0 40px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 0 15px;
+}
+
+.coreValuesTitle {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2C3E50;
+  margin-bottom: 10px;
+}
+
+.coreValuesSubtitle {
+  color: #666;
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.coreValueCard {
+  background: #f8f9fa;
+  padding: 40px 30px;
+  border-radius: 10px;
+  text-align: center;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid #e9ecef;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.coreValueCard:hover {
+  background: #2C3E50;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #2C3E50;
+}
+
+.coreValueIcon {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #E40C29;
+  transition: all 0.4s ease;
+}
+
+.coreValueCard:hover .coreValueIcon {
+  background: white;
+  transform: scale(1.1);
+}
+
+.coreValueIcon svg {
+  color: white;
+  transition: all 0.4s ease;
+}
+
+.coreValueCard:hover .coreValueIcon svg {
+  color: #E40C29;
+}
+
+.coreValueTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2C3E50;
+  margin-bottom: 15px;
+  transition: color 0.4s ease;
+}
+
+.coreValueCard:hover .coreValueTitle {
+  color: white;
+}
+
+.coreValueDescription {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+  transition: color 0.4s ease;
+   text-align: left;
+}
+
+.coreValueCard:hover .coreValueDescription {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.coreValueCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #E40C29;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
+}
+
+.coreValueCard:hover::before {
+  transform: scaleX(1);
+}
+
+/* ========== NEW EXPLORE CARD STYLES ========== */
+/* EXPLORE CATEGORIES - CUSTOM STYLES */
+.exploreCard {
+  background: transparent !important;
+  border: 1px solid #e9ecef !important;
+  padding: 30px 25px !important;
+  border-radius: 10px !important;
+  text-align: left !important;
+  height: 100% !important;
+  cursor: default !important;
+  margin: 0 10px !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+.exploreCard:hover {
+  background: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: #e9ecef !important;
+}
+
+.exploreTitle {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #2C3E50 !important;
+  margin-bottom: 20px !important;
+  text-align: center !important;
+  transition: none !important;
+}
+
+.exploreCard:hover .exploreTitle {
+  color: #2C3E50 !important;
+}
+
+.exploreContent {
+  color: #666 !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+.categoryLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.categoryLink {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #2C3E50;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.categoryLink:hover {
+  background: #e9ecef;
+  text-decoration: none;
+  border-color: #E40C29;
+  transform: translateX(3px);
+}
+
+.categoryIcon {
+  width: 32px;
+  height: 32px;
+  background: rgba(228, 12, 41, 0.1);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.categoryIcon svg {
+  color: #E40C29;
+  width: 16px;
+  height: 16px;
+}
+
+.categoryLink span {
+  flex: 1;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.linkArrow {
+  color: #E40C29;
+  font-weight: bold;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.2s ease;
+}
+
+.categoryLink:hover .linkArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contactNote {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.contactNote p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.contactLink {
+  color: #E40C29;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
+
+.contactLink::after {
+  content: '→';
+  margin-left: 5px;
+  transition: transform 0.2s ease;
+}
+
+.contactLink:hover::after {
+  transform: translateX(3px);
+}
+
+/* Remove hover effects from parent card */
+.exploreCard::before {
+  display: none !important;
+}
+
+.exploreCard:hover .exploreContent {
+  color: #666 !important;
+}
+/* ========== END NEW EXPLORE CARD STYLES ========== */
+
+/* HERO SECTION */
+.aboutHero {
+  position: relative;
+  height: 400px;
+  background-image: url('/images/prop-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.85);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  max-width: 1200px;
+}
+
+.heroTitle {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
+}
+
+.heroBreadcrumb {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Learn More Button - MOVED OUTSIDE MEDIA QUERIES */
+.learnMoreBtn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: transparent;
+  color: #E40C29;
+  text-decoration: none;
+  border: 2px solid #e9dadd;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.learnMoreBtn:hover {
+  background: #E40C29;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(228, 12, 41, 0.3);
+}
+
+/* When card is hovered (dark background), keep button visible with white border */
+.coreValueCard:hover .learnMoreBtn {
+  color: white;
+  border-color: white;
+  background: transparent;
+}
+
+/* When button itself is hovered while card is also hovered */
+.coreValueCard:hover .learnMoreBtn:hover {
+  background: #E40C29;
+  color: white;
+  border-color: #E40C29;
+}
+
+
+/* MEDIA QUERIES */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .aboutSection {
+    padding: 50px 0;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .coreValuesContainer {
+    padding: 0 30px;
+  }
+
+  .coreValuesTitle {
+    font-size: 32px;
+  }
+
+  .coreValuesSubtitle {
+    font-size: 16px;
+  }
+
+  .coreValueCard {
+    padding: 30px 20px;
+    margin: 0 8px;
+  }
+
+  .coreValueTitle {
+    font-size: 22px;
+  }
+
+  .coreValueDescription {
+    font-size: 15px;
+    
+  }
+
+  .aboutHero {
+    height: 400px;
+  }
+
+  .heroTitle {
+    font-size: 46px;
+  }
+
+  .heroBreadcrumb {
+    font-size: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 40px 0;
+  }
+
+  .aboutText {
+    padding: 30px 0 0;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .coreValuesContainer {
+    padding: 0 20px;
+  }
+
+  .coreValuesTitle {
+    font-size: 28px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  .coreValueCard {
+    padding: 25px 15px;
+    margin: 0 5px 20px;
+  }
+
+  .coreValueIcon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+
+  .coreValueIcon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .aboutHero {
+    height: 350px;
+    background-attachment: scroll;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+    letter-spacing: 1px;
+  }
+
+  .heroBreadcrumb {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .features {
+    gap: 10px;
+  }
+
+  .feature {
+    font-size: 14px;
+  }
+
+  .coreValuesContainer {
+    padding: 0 15px;
+  }
+
+  .coreValuesTitle {
+    font-size: 24px;
+  }
+
+  .coreValuesSubtitle {
+    font-size: 14px;
+  }
+
+  .coreValueCard {
+    padding: 20px 12px;
+    margin: 0 0 20px;
+  }
+
+  .coreValueTitle {
+    font-size: 20px;
+  }
+
+  .coreValueDescription {
+    font-size: 14px;
+  }
+
+  .aboutHero {
+    height: 300px;
+  }
+
+  .heroTitle {
+    font-size: 28px;
+  }
+
+  .heroBreadcrumb {
+    font-size: 14px;
+  }
+
+
+  
+}
