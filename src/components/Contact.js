@@ -221,7 +221,7 @@ export default function Contact() {
 
           <h1 className={styles.heroTitle}>GET IN TOUCH</h1>
           <p className={styles.heroBreadcrumb}>
-            Let's discuss how we can help bring your vision to life.
+            Lets discuss how we can help bring your vision to life.
           </p>
         </div>
       </section>
@@ -238,9 +238,9 @@ export default function Contact() {
                   Start Your Project Today
                 </h2>
                 <p className={styles.contactDescription}>
-                  Whether you're planning a construction project, need engineering expertise, 
+                  Whether you are planning a construction project, need engineering expertise, 
                   or exploring property management solutions, our team is ready to help. 
-                  Fill out the form and we'll respond within 24-48 hours.
+                  Fill out the form and we will respond within 24-48 hours.
                 </p>
 
                 <div className={styles.infoCards}>
