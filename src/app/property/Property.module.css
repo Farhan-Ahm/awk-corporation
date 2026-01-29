@@ -402,6 +402,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 /* BREADCRUMB STYLES - UPDATED TO MATCH ENGINEERING EXACTLY */

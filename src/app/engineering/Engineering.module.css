@@ -10,6 +10,7 @@
   background-attachment: fixed;
   overflow: hidden;
   margin-bottom: 20px;
+  
 }
 
 .heroOverlay {
@@ -35,6 +36,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+    margin: 0 auto;
 }
 
 /* Creative Breadcrumb Styles - BOTTOM LEFT CORNER */

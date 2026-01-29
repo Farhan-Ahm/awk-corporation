@@ -1,6 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import styles from './Hero.module.css';
+import Link from 'next/link';
 
 export default function Hero() {
   useEffect(() => {
@@ -29,7 +30,11 @@ export default function Hero() {
             TURNKEY ENGINEERING SOLUTIONS
           </h1>
           <div className={styles.heroButtons}>
-            <button className={styles.btnPrimary}>CONTACT US →</button>
+            <Link href="/contact">
+            <button className={styles.btnPrimary}>
+              CONTACT US →
+            </button>
+          </Link>
             <button className={styles.btnSecondary}>BOOK AN APPOINTMENT →</button>
           </div>
         </div>

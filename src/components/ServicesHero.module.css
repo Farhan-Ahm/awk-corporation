@@ -35,6 +35,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 /* Creative Breadcrumb Styles - BOTTOM LEFT CORNER - Added from Engineering */

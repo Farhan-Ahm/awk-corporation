@@ -1,4 +1,4 @@
-/* About.module.css */
+/* AboutHero.module.css */
 
 /* HERO SECTION - Updated to match Engineering */
 .aboutHero {
@@ -10,6 +10,8 @@
   background-attachment: fixed;
   overflow: hidden;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .heroOverlay {
@@ -27,7 +29,7 @@
   z-index: 2;
   text-align: center;
   color: white;
-  padding: 0 20px;
+  padding: 0 20px;  
   max-width: 1200px;
   width: 100%;
   height: 100%;
@@ -35,12 +37,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  
 }
 
 /* Creative Breadcrumb Styles - BOTTOM LEFT CORNER - Added from Engineering */
 .breadcrumbWrapper {
   position: absolute;
-  bottom: 0px; /* Position at bottom */
+  bottom: 0px; /* Position   at bottom */
   left: 0px; /* Position at left side */
   z-index: 3;
   display: flex;

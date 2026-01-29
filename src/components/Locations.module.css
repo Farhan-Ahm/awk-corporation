@@ -1,10 +1,11 @@
 /* OPTION 1: Banner Style */
 .locationsBanner {
   background: linear-gradient(135deg, #2C3539 0%, #3d4a59 100%);
-  padding: 40px 0;
-  margin: 10px 0;
+  padding: 30px 0; /* Reduced from 40px - adjust as needed */
+  margin: 0; /* Changed from margin: 10px 0 to 0 */
+  /* Or use negative margin to pull it up */
+  margin-top: -10px; /* Try this to remove gap completely */
 }
-
 .bannerContent {
   display: flex;
   justify-content: space-between;

@@ -68,7 +68,7 @@ export default function Services() {
               to last-always aligned with your vision..
             </p>
 
-            <h3 className={styles.subheading}>We Can Help You</h3>
+            <h3 className={styles.subheading}>How We Support Your Success</h3>
 
             <div className={styles.servicesGrid}>
               {services.map((service, index) => (

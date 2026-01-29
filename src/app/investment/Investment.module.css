@@ -406,6 +406,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 /* BREADCRUMB STYLES - ADDED TO MATCH ENGINEERING */

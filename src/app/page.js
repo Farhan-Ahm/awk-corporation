@@ -2,9 +2,9 @@
 import { useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import { LocationsBanner } from '../components/Locations';
 import Services from '../components/Services';
 import CTASection from '../components/CTASection';
-import { LocationsBanner } from '../components/Locations';
 import Certifications from '../components/Certifications';
 import Projects from '../components/Projects';
 //import Contact from '../components/Contact';
@@ -34,11 +34,13 @@ export default function Home() {
     <>
       <Header />
       <Hero />
+      <LocationsBanner /> 
       <Services />
       <CTASection />     
-      <Certifications/>
-       <LocationsBanner /> 
+ 
+       
       <Projects />
+           <Certifications/>
       {/* <Contact /> */}
       <Footer />
     </>

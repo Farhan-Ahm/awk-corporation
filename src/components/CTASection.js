@@ -8,7 +8,7 @@ export default function CTASection() {
         <div className="row align-items-center">
           <div className="col-lg-8">
             <div className={styles.subtitle}>
-              Let AWK transform your vision into enduring reality
+              Let AWK Corporation Transform Your Vision into a Lasting Reality.
             </div>
             <h2 className={styles.title}>Ready to start your project with AWK?</h2>
           </div>
