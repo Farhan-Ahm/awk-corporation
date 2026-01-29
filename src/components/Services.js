@@ -8,19 +8,19 @@ export default function Services() {
 
   const services = [
     {
-     icon: '/images/building-svgrepo-com.svg',
-      title: 'Construction',
-      description: 'Delivering expert support that keeps your operations moving.',
-      color: '#2C3E50',
-      link: '/construction'
-    },
-    {
        icon: '/images/engineer-config-svgrepo-com.svg',
       title: 'Engineering',
       description: 'Tailored solutions for infrastructure, energy, and industrial projects.',
       color: '#2C3E50',
       link: '/engineering'
     },
+    {
+     icon: '/images/building-svgrepo-com.svg',
+      title: 'Construction',
+      description: 'Delivering expert support that keeps your operations moving.',
+      color: '#2C3E50',
+      link: '/construction'
+    },    
     {
      icon: '/images/arrow-up-house-svgrepo-com.svg',
       title: 'Property Management',

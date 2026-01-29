@@ -1,12 +1,15 @@
+/* Services.module.css - Hero Section */
+
+/* HERO SECTION - Updated to match Engineering */
 .aboutHero {
   position: relative;
-  height: 400px;
-  background: url('/images/engineering.jpg') center/cover;
+  height: 350px;
+  background: url('/images/engineering.jpg') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .heroOverlay {
@@ -15,7 +18,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+ background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   z-index: 1;
 }
 
@@ -24,32 +27,168 @@
   z-index: 2;
   text-align: center;
   color: white;
+  padding: 0 20px;
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Creative Breadcrumb Styles - BOTTOM LEFT CORNER - Added from Engineering */
+.breadcrumbWrapper {
+  position: absolute;
+  bottom: 0px; /* Position at bottom */
+  left: 0px; /* Position at left side */
+  z-index: 3;
+  display: flex;
+  justify-content: flex-start; /* Align left */
+  width: auto;
+}
+
+.breadcrumbNav {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 10px 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: auto;
+  display: inline-block;
+}
+
+.breadcrumbList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items left */
+  gap: 5px;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.breadcrumbLink:hover {
+  color: white;
+  background: rgba(228, 12, 41, 0.15);
+}
+
+.breadcrumbLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #E40C29;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.breadcrumbLink:hover::after {
+  width: 70%;
+  box-shadow: 0 0 10px rgba(228, 12, 41, 0.5);
+}
+
+.homeIcon {
+  stroke: rgba(255, 255, 255, 0.9);
+  transition: stroke 0.3s ease;
+}
+
+.breadcrumbLink:hover .homeIcon {
+  stroke: white;
+}
+
+.breadcrumbSeparator {
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+}
+
+.breadcrumbSeparator svg {
+  stroke: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumbCurrent {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 15px;
+  background: rgba(228, 12, 41, 0.2);
+  border-radius: 20px;
+  border: 1px solid rgba(228, 12, 41, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.breadcrumbCurrent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 .heroTitle {
-  font-size: 56px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  animation: fadeInUp 1s ease-out;
+  font-size: 48px; /* Changed from 56px to match Engineering */
+  font-weight: 800;
+  margin-bottom: 15px; /* Changed from 20px to match Engineering */
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
+  position: relative;
+  z-index: 2;
 }
-
 
 .heroBreadcrumb {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 auto;
+  font-weight: 400;
+  letter-spacing: 0.5px;
   animation: fadeInUp 1.2s ease-out;
-  
-}
-
-.heroBreadcrumb a {
-  color: #FF9800;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.heroBreadcrumb a:hover {
-  color: #F57C00;
+  padding: 0 10px;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 60px; /* Added space at bottom for breadcrumb */
 }
 
 @keyframes fadeInUp {
@@ -63,39 +202,161 @@
   }
 }
 
+/* MEDIA QUERIES - Updated to match Engineering */
+
 /* Tablet */
 @media (max-width: 992px) {
   .aboutHero {
-    height: 350px;
+    height: 300px; /* Changed from 350px to match Engineering */
+    margin-bottom: 20px; /* Added to match Engineering */
   }
 
   .heroTitle {
-    font-size: 48px;
+    font-size: 40px; /* Changed from 48px to match Engineering */
+    margin-bottom: 10px; /* Changed to match Engineering */
+  }
+
+  .heroBreadcrumb {
+    font-size: 16px; /* Changed to match Engineering */
+    margin-bottom: 50px; /* Added to match Engineering */
+  }
+
+  .breadcrumbWrapper {
+     padding: 12px 15px; /* Added to match Engineering */
+  }
+  
+  .breadcrumbNav {
+     padding: 10px 20px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink {
+    font-size: 13px; /* Changed to match Engineering */
+    padding: 4px 8px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbCurrent {
+    font-size: 13px; /* Changed to match Engineering */
+    padding: 4px 12px; /* Changed to match Engineering */
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .aboutHero {
-    height: 300px;
-    background-attachment: scroll;
+    height: 250px; /* Changed from 300px to match Engineering */
+    background-attachment: scroll; /* Added to match Engineering */
+    margin-bottom: 15px; /* Added to match Engineering */
   }
 
   .heroTitle {
-    font-size: 40px;
+    font-size: 30px; /* Changed from 40px to match Engineering */
+    letter-spacing: 1px; /* Added to match Engineering */
+    margin-bottom: 8px; /* Added to match Engineering */
   }
 
   .heroBreadcrumb {
-    font-size: 14px;
+    font-size: 14px; /* Changed from 14px to match Engineering */
+    padding: 0 5px; /* Added to match Engineering */
+    margin-bottom: 40px; /* Added to match Engineering */
+  }
+
+  /* Breadcrumb responsive for mobile - MATCHING ENGINEERING */
+  .breadcrumbWrapper {
+     padding: 10px 12px; /* Added to match Engineering */
+  }
+  
+  .breadcrumbNav {
+     padding: 8px 15px; /* Changed to match Engineering */
+    backdrop-filter: blur(5px); /* Changed to match Engineering */
+    -webkit-backdrop-filter: blur(5px); /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink {
+    font-size: 12px; /* Changed to match Engineering */
+    padding: 3px 6px; /* Changed to match Engineering */
+    gap: 4px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink span {
+     display: none; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink .homeIcon {
+    display: block; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbSeparator {
+    padding: 0 1px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbSeparator svg {
+    width: 10px; /* Changed to match Engineering */
+    height: 10px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbCurrent {
+    font-size: 12px; /* Changed to match Engineering */
+    padding: 3px 10px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbCurrent span {
+    display: inline; /* Changed to match Engineering */
   }
 }
 
+/* Small Mobile */
 @media (max-width: 576px) {
   .aboutHero {
-    height: 250px;
+    height: 200px; /* Changed from 250px to match Engineering */
+    margin-bottom: 10px; /* Added to match Engineering */
   }
 
   .heroTitle {
-    font-size: 32px;
+    font-size: 24px; /* Changed from 32px to match Engineering */
+    margin-bottom: 5px; /* Added to match Engineering */
+  }
+
+  .heroBreadcrumb {
+    font-size: 13px; /* Changed to match Engineering */
+    margin-bottom: 30px; /* Added to match Engineering */
+  }
+
+  /* Breadcrumb responsive for small mobile - MATCHING ENGINEERING */
+  .breadcrumbWrapper {
+    padding: 8px 10px; /* Added to match Engineering */
+  }
+  
+  .breadcrumbNav {
+    padding: 6px 12px; /* Changed to match Engineering */
+    border-radius: 0 20px 0 0; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink {
+    padding: 2px 4px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbCurrent {
+    padding: 2px 8px; /* Changed to match Engineering */
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  /* Breadcrumb responsive for extra small - MATCHING ENGINEERING */
+  .breadcrumbWrapper {
+     padding: 6px 8px; /* Added to match Engineering */
+  }
+  
+  .breadcrumbNav {
+    padding: 5px 10px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbLink {
+    font-size: 11px; /* Changed to match Engineering */
+  }
+  
+  .breadcrumbCurrent {
+    font-size: 11px; /* Changed to match Engineering */
+    padding: 2px 6px; /* Changed to match Engineering */
   }
 }

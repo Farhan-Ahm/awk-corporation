@@ -177,9 +177,9 @@ export default function Construction() {
                           <li>Healthcare facilities and medical offices</li>
 
                   </ul>
-                  <a href="" className={styles.learnMoreBtn}>
+                  {/*<a href="" className={styles.learnMoreBtn}>
                     LEARN MORE
-                  </a>
+                  </a>*/}
                 </div>
                 
               </div>
@@ -201,9 +201,9 @@ export default function Construction() {
                     <li>Balcony, façade, and structural rehabilitation projects</li>
                     <li>Low-rise and mid-rise residential developments</li>
                   </ul>
-                  <a href="" className={styles.learnMoreBtn}>
+                   {/*<a href="" className={styles.learnMoreBtn}>
                     LEARN MORE
-                  </a>
+                  </a>*/}
                 </div>
               </div>
               
@@ -230,9 +230,9 @@ export default function Construction() {
                     <li>Agricultural and Storage Facilities</li>
                     <li>Water and wastewater treatment facilities</li>
                   </ul>
-                  <a href="" className={styles.learnMoreBtn}>
+                   {/*<a href="" className={styles.learnMoreBtn}>
                     LEARN MORE
-                  </a>
+                  </a>*/}
                 </div>
               </div>
 

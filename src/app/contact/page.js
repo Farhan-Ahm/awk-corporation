@@ -1,13 +1,11 @@
 'use client';
 import { useEffect } from 'react';
 import Header from '../../components/Header';
-import AboutHero from '../../components/AboutHero';
-import AboutContent from '../../components/AboutContent';
+import Contact from '../../components/Contact';
 import WorkingUs from '../../components/WorkingUs';
 import Footer from '../../components/Footer';
 
-
-export default function AboutPage() {
+export default function ContactPage() {
   useEffect(() => {
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver(
@@ -29,12 +27,10 @@ export default function AboutPage() {
 
   return (
     <>
-         <Header />
-           <AboutHero />         
-           <AboutContent />             
-          <WorkingUs />
-           <Footer />
-     
+      <Header />
+      <Contact />
+      <WorkingUs />
+      <Footer />
     </>
   );
 }
