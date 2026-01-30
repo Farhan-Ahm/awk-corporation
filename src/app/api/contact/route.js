@@ -30,7 +30,7 @@ export async function POST(request) {
       );
     }
 
-    // Create transporter
+    // Create transporter with extended timeouts and additional options
     const transporter = nodemailer.createTransport({
       host: process.env.MAIL_HOST,
       port: parseInt(process.env.MAIL_PORT),
@@ -39,12 +39,37 @@ export async function POST(request) {
         user: process.env.MAIL_USER,
         pass: process.env.MAIL_PASS,
       },
+      // ADD THESE NEW OPTIONS
+      connectionTimeout: 10000, // 10 seconds
+      greetingTimeout: 10000, // 10 seconds
+      socketTimeout: 10000, // 10 seconds
+      pool: false, // Disable connection pooling for serverless
+      maxConnections: 1,
+      maxMessages: 1,
+      tls: {
+        rejectUnauthorized: false, // May help with some SMTP servers
+        ciphers: 'SSLv3'
+      },
+      debug: false, // Set to true if you want detailed logs
+      logger: false
     });
+
+    // Verify connection before sending
+    try {
+      await transporter.verify();
+      console.log('SMTP connection verified successfully');
+    } catch (verifyError) {
+      console.error('SMTP verification failed:', verifyError);
+      return Response.json(
+        { success: false, message: 'Email server connection failed. Please try again.' },
+        { status: 500 }
+      );
+    }
 
     // Email to admin/company
     const adminMailOptions = {
       from: `"${name}" <${process.env.MAIL_USER}>`,
-      to: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ? process.env.MAIL_USER : 'technicalservices@awkcorporation.com',
+      to: process.env.MAIL_USER,
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       html: `
@@ -246,9 +271,12 @@ export async function POST(request) {
       `,
     };
 
-    // Send emails
+    // Send emails with error handling
     await transporter.sendMail(adminMailOptions);
     await transporter.sendMail(userMailOptions);
+
+    // Close transporter
+    transporter.close();
 
     return Response.json(
       { 

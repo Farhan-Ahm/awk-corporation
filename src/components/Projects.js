@@ -33,7 +33,7 @@ export default function Projects() {
     <section id="projects" className={styles.projectsSection}>
       <div className="container">
         <div className="text-center mb-5 scroll-animate">
-          <div className="section-subtitle">OUR PORTFOLIO</div>
+          <div className="section-subtitle">VIEW OUR PORFOLIO SHOWCASE</div>
           <h2 className="section-title">Projects</h2>
         </div>
         <div className="row g-4">
