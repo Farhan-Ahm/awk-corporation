@@ -62,10 +62,11 @@ export default function Services() {
             <div className={styles.subtitle}>Welcome to AWK Corporation</div>
             <h1 className={styles.mainTitle}>Infrastructure Excellence, Delivered</h1>
             <p className={styles.description}>
-              We simplify infrastructure, construction, and procurement through careful 
-              planning and precise execution. Operating across North America, 
-              our collaborative approach ensures transparency, safety, and projects built 
-              to last-always aligned with your vision..
+              We streamline infrastructure, construction, and procurement
+               through strategic planning and precise execution. Operating 
+               across North America, our collaborative approach ensures 
+               transparency, safety, and high-quality, durable
+                projects consistently aligned with your vision and objectives.
             </p>
 
             <h3 className={styles.subheading}>How We Support Your Success</h3>

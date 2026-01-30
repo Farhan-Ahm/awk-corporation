@@ -3,66 +3,68 @@
 import { useState, useEffect } from 'react';
 import styles from './ProjectGallery.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProjectGallery() {
   // Sample project data - you can replace this with props or API data
-const projectData = {
-  title: "Steel Framing Construction for Industrial Warehouse",
-  location: "Red Deer",
-  year: "2025",
-  description: "The Steel Framing Construction for Industrial Warehouse project was successfully completed, resulting in a strong, efficient, and code-compliant structural steel framework. The scope included the fabrication and erection of steel columns, beams, trusses, and bracing, tailored to support a modern industrial warehouse with wide clear spans and high load-bearing capacity. The project was delivered on time and within budget, with a strong focus on safety and coordination with other trades. The completed steel frame provides a durable foundation for all subsequent construction phases and supports future scalability and operational flexibility.",
-  features: [
-    "Steel column fabrication and installation",
-    "Beam erection and connection",
-    "Truss system construction",
-    "Structural bracing installation",
-    "Code-compliant steel framework",
-    "Wide clear span design",
-    "High load-bearing capacity",
-    "Safety-focused construction",
-    "Trade coordination management",
-    "Future scalability support"
-  ],
-  images: [
-    { 
-      id: 1, 
-      src: "/images/projects/irongrid/1.png", 
-      alt: "AWK Corporation steel column installation for industrial warehouse framework",
-      category: "structural" 
-    },
-    { 
-      id: 2, 
-      src: "/images/projects/irongrid/2.png", 
-      alt: "AWK Corporation steel beam erection and connection process",
-      category: "structural" 
-    },
-    { 
-      id: 3, 
-      src: "/images/projects/irongrid/3.png", 
-      alt: "AWK Corporation steel truss system construction with wide clear spans",
-      category: "truss" 
-    },
-    { 
-      id: 4, 
-      src: "/images/projects/irongrid/4.png", 
-      alt: "AWK Corporation structural bracing installation for warehouse stability",
-      category: "bracing" 
-    },
-    { 
-      id: 5, 
-      src: "/images/projects/irongrid/5.png", 
-      alt: "AWK Corporation completed steel framework showing load-bearing capacity",
-      category: "framework" 
-    },
-    { 
-      id: 6, 
-      src: "/images/projects/irongrid/6.png", 
-      alt: "AWK Corporation safety-focused steel construction with proper equipment",
-      category: "safety" 
-    }
-  ],
-  categories: ["all", "structural", "truss", "bracing", "framework", "safety"]
-};
+  const projectData = {
+    title: "Steel Framing Construction for Industrial Warehouse",
+    location: "Red Deer",
+    year: "2025",
+    description: "The Steel Framing Construction for Industrial Warehouse project was successfully completed, resulting in a strong, efficient, and code-compliant structural steel framework. The scope included the fabrication and erection of steel columns, beams, trusses, and bracing, tailored to support a modern industrial warehouse with wide clear spans and high load-bearing capacity. The project was delivered on time and within budget, with a strong focus on safety and coordination with other trades. The completed steel frame provides a durable foundation for all subsequent construction phases and supports future scalability and operational flexibility.",
+    features: [
+      "Steel column fabrication and installation",
+      "Beam erection and connection",
+      "Truss system construction",
+      "Structural bracing installation",
+      "Code-compliant steel framework",
+      "Wide clear span design",
+      "High load-bearing capacity",
+      "Safety-focused construction",
+      "Trade coordination management",
+      "Future scalability support"
+    ],
+    images: [
+      { 
+        id: 1, 
+        src: "/images/projects/irongrid/1.png", 
+        alt: "AWK Corporation steel column installation for industrial warehouse framework",
+        category: "structural" 
+      },
+      { 
+        id: 2, 
+        src: "/images/projects/irongrid/2.png", 
+        alt: "AWK Corporation steel beam erection and connection process",
+        category: "structural" 
+      },
+      { 
+        id: 3, 
+        src: "/images/projects/irongrid/3.png", 
+        alt: "AWK Corporation steel truss system construction with wide clear spans",
+        category: "truss" 
+      },
+      { 
+        id: 4, 
+        src: "/images/projects/irongrid/4.png", 
+        alt: "AWK Corporation structural bracing installation for warehouse stability",
+        category: "bracing" 
+      },
+      { 
+        id: 5, 
+        src: "/images/projects/irongrid/5.png", 
+        alt: "AWK Corporation completed steel framework showing load-bearing capacity",
+        category: "framework" 
+      },
+      { 
+        id: 6, 
+        src: "/images/projects/irongrid/6.png", 
+        alt: "AWK Corporation safety-focused steel construction with proper equipment",
+        category: "safety" 
+      }
+    ],
+    categories: ["all", "structural", "truss", "bracing", "framework", "safety"]
+  };
+
   const [selectedImage, setSelectedImage] = useState(null);
   const [filter, setFilter] = useState('all');
   const [filteredImages, setFilteredImages] = useState(projectData.images);
@@ -114,6 +116,79 @@ const projectData = {
 
   return (
     <div className={styles.projectGallery}>
+      {/* ===== BREADCRUMB SECTION WITHOUT HERO ===== */}
+      <section className={styles.pageBreadcrumb}>
+        <div className="container">
+          <div className={styles.breadcrumbContainer}>
+            <nav className={styles.breadcrumbNav} aria-label="Breadcrumb">
+              <ol className={styles.breadcrumbList}>
+                <li className={styles.breadcrumbItem}>
+                  <Link href="/" className={styles.breadcrumbLink}>
+                    <svg 
+                      className={styles.homeIcon} 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    >
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    
+                  </Link>
+                </li>
+                <li className={styles.breadcrumbSeparator}>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </li>
+                <li className={styles.breadcrumbItem}>
+                  <Link href="/projects" className={styles.breadcrumbLink}>
+                    <span>Projects</span>
+                  </Link>
+                </li>
+                <li className={styles.breadcrumbSeparator}>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </li>
+                <li className={`${styles.breadcrumbItem} ${styles.active}`}>
+                  <span className={styles.breadcrumbCurrent}>
+                    {projectData.title}
+                  </span>
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </section>
+      {/* ===== END BREADCRUMB SECTION ===== */}
+
       {/* Project Header */}
       <div className={styles.projectHeader}>
         <div className={styles.projectMeta}>

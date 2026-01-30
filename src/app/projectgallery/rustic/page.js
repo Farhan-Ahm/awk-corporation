@@ -1,8 +1,8 @@
+//page.js
 'use client';
 import { useEffect } from 'react';
 import Header from '../../../components/Header';
 import ProjectGallery from '../rustic/ProjectGallery';
-
 import WorkingUs from '../../../components/WorkingUs';
 import Footer from '../../../components/Footer';
 export default function AboutPage() {

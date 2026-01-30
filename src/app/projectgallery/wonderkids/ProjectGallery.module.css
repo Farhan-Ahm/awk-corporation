@@ -1,5 +1,191 @@
 /* ProjectGallery.module.css */
+.pageBreadcrumb {
+  background: linear-gradient(135deg, #2C3539 0%, #1a1f23 100%);
+  padding: 25px 0;
+  position: relative;
+  overflow: hidden;
+}
 
+.pageBreadcrumb::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #E40C29 0%, #FF9800 100%);
+  z-index: 1;
+}
+
+.breadcrumbContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumbNav {
+  display: inline-block;
+}
+
+.breadcrumbList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.breadcrumbLink:hover {
+  color: white;
+  background: rgba(228, 12, 41, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(228, 12, 41, 0.2);
+}
+
+.homeIcon {
+  stroke: rgba(255, 255, 255, 0.9);
+  transition: stroke 0.3s ease;
+}
+
+.breadcrumbLink:hover .homeIcon {
+  stroke: white;
+}
+
+.breadcrumbSeparator {
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.breadcrumbSeparator svg {
+  stroke: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumbCurrent {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 18px;
+ /* More visible red background */
+  background-color: rgba(228, 12, 41, 0.3); /* 30% opacity */
+  
+  /* Border */
+  border: 1px solid rgba(228, 12, 41, 0.4); /* Slightly more visible border */
+  border-radius: 20px;
+  
+  position: relative;
+  overflow: hidden;
+}
+
+.breadcrumbCurrent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(228, 12, 41, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(228, 12, 41, 0);
+  }
+}
+
+/* ===== RESPONSIVE BREADCRUMB ===== */
+@media (max-width: 768px) {
+  .pageBreadcrumb {
+    padding: 20px 0;
+  }
+  
+  .breadcrumbList {
+    gap: 8px;
+  }
+  
+  .breadcrumbLink {
+    font-size: 13px;
+    padding: 6px 12px;
+    gap: 6px;
+  }
+  
+  .breadcrumbLink span {
+    font-size: 13px;
+  }
+  
+  .breadcrumbCurrent {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+  
+  .breadcrumbSeparator svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pageBreadcrumb {
+    padding: 15px 0;
+  }
+  
+  .breadcrumbList {
+    gap: 6px;
+  }
+  
+  .breadcrumbLink {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  
+  .breadcrumbLink span {
+    font-size: 12px;
+  }
+  
+  .breadcrumbCurrent {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+}
 /* Base Styles */
 .projectGallery {
   padding: 40px 0;

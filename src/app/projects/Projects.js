@@ -77,7 +77,7 @@ export default function Projects() {
             </nav>
           </div>
           
-          <h1 className={styles.heroTitle}>PROJECTS</h1>
+          <h1 className={styles.heroTitle}>OUR PORTFOLIO</h1>
           <p className={styles.heroBreadcrumb}>
             Delivering expert support that keeps your operations moving.
           </p>             

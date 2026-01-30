@@ -3,62 +3,64 @@
 import { useState, useEffect } from 'react';
 import styles from './ProjectGallery.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProjectGallery() {
   // Sample project data - you can replace this with props or API data
-const projectData = {
-  title: "Sunshine Meadows Daycare Center",
-  location: "Saskatoon",
-  year: "2025",
-  description: "The Sunshine Meadows Daycare Center project involved the successful ground-up construction of a state-of-the-art childcare facility designed to support early childhood development in a safe, functional, and nurturing environment. The single-story, 9,800-square-foot center was built on a 1.3-acre site and includes six classrooms, infant and toddler care rooms, administrative offices, a commercial kitchen, indoor play spaces, and two secure outdoor playgrounds. The facility was constructed in full compliance with state childcare licensing regulations and local building codes, with an emphasis on safety, accessibility, and energy efficiency. The project was completed on schedule and within the $2.6 million budget. Construction took approximately 14 months, from site preparation to final occupancy. Despite minor challenges related to weather and materials logistics, the team maintained steady progress through proactive coordination and efficient project management.",
-  features: [
-    "9,800-square-foot single-story facility",
-    "Six classrooms with age-appropriate design",
-    "Infant and toddler care rooms",
-    "Administrative offices and reception",
-    "Commercial kitchen with food prep areas",
-    "Indoor play spaces and activity zones",
-    "Two secure outdoor playgrounds",
-    "Full ADA accessibility compliance",
-    "Energy-efficient building systems",
-    "State childcare licensing compliance",
-    "Safety-first construction approach",
-    "Weather-resistant materials and finishes"
-  ],
-  images: [
-    { 
-      id: 1, 
-      src: "/images/projects/wonderkids/1.png", 
-      alt: "AWK Corporation Sunshine Meadows Daycare exterior facade with playground",
-      category: "exterior" 
-    },
-    { 
-      id: 2, 
-      src: "/images/projects/wonderkids/2.png", 
-      alt: "AWK Corporation daycare classroom interior with child-friendly furniture",
-      category: "classroom" 
-    },
-    { 
-      id: 3, 
-      src: "/images/projects/wonderkids/3.png", 
-      alt: "AWK Corporation infant care room with safety features and soft finishes",
-      category: "nursery" 
-    },
-    { 
-      id: 4, 
-      src: "/images/projects/wonderkids/4.png", 
-      alt: "AWK Corporation commercial kitchen with food prep stations",
-      category: "kitchen" 
-    },
-    { 
-      id: 5, 
-      src: "/images/projects/wonderkids/5.png", 
-      alt: "AWK Corporation outdoor playground with safety surfacing and equipment",
-      category: "playground" 
-    }
-  ],
-  categories: ["all", "exterior", "classroom", "nursery", "kitchen", "playground"]
-};
+  const projectData = {
+    title: "Sunshine Meadows Daycare Center",
+    location: "Saskatoon",
+    year: "2025",
+    description: "The Sunshine Meadows Daycare Center project involved the successful ground-up construction of a state-of-the-art childcare facility designed to support early childhood development in a safe, functional, and nurturing environment. The single-story, 9,800-square-foot center was built on a 1.3-acre site and includes six classrooms, infant and toddler care rooms, administrative offices, a commercial kitchen, indoor play spaces, and two secure outdoor playgrounds. The facility was constructed in full compliance with state childcare licensing regulations and local building codes, with an emphasis on safety, accessibility, and energy efficiency. The project was completed on schedule and within the $2.6 million budget. Construction took approximately 14 months, from site preparation to final occupancy. Despite minor challenges related to weather and materials logistics, the team maintained steady progress through proactive coordination and efficient project management.",
+    features: [
+      "9,800-square-foot single-story facility",
+      "Six classrooms with age-appropriate design",
+      "Infant and toddler care rooms",
+      "Administrative offices and reception",
+      "Commercial kitchen with food prep areas",
+      "Indoor play spaces and activity zones",
+      "Two secure outdoor playgrounds",
+      "Full ADA accessibility compliance",
+      "Energy-efficient building systems",
+      "State childcare licensing compliance",
+      "Safety-first construction approach",
+      "Weather-resistant materials and finishes"
+    ],
+    images: [
+      { 
+        id: 1, 
+        src: "/images/projects/wonderkids/1.png", 
+        alt: "AWK Corporation Sunshine Meadows Daycare exterior facade with playground",
+        category: "exterior" 
+      },
+      { 
+        id: 2, 
+        src: "/images/projects/wonderkids/2.png", 
+        alt: "AWK Corporation daycare classroom interior with child-friendly furniture",
+        category: "classroom" 
+      },
+      { 
+        id: 3, 
+        src: "/images/projects/wonderkids/3.png", 
+        alt: "AWK Corporation infant care room with safety features and soft finishes",
+        category: "nursery" 
+      },
+      { 
+        id: 4, 
+        src: "/images/projects/wonderkids/4.png", 
+        alt: "AWK Corporation commercial kitchen with food prep stations",
+        category: "kitchen" 
+      },
+      { 
+        id: 5, 
+        src: "/images/projects/wonderkids/5.png", 
+        alt: "AWK Corporation outdoor playground with safety surfacing and equipment",
+        category: "playground" 
+      }
+    ],
+    categories: ["all", "exterior", "classroom", "nursery", "kitchen", "playground"]
+  };
+
   const [selectedImage, setSelectedImage] = useState(null);
   const [filter, setFilter] = useState('all');
   const [filteredImages, setFilteredImages] = useState(projectData.images);
@@ -110,6 +112,79 @@ const projectData = {
 
   return (
     <div className={styles.projectGallery}>
+      {/* ===== BREADCRUMB SECTION WITHOUT HERO ===== */}
+      <section className={styles.pageBreadcrumb}>
+        <div className="container">
+          <div className={styles.breadcrumbContainer}>
+            <nav className={styles.breadcrumbNav} aria-label="Breadcrumb">
+              <ol className={styles.breadcrumbList}>
+                <li className={styles.breadcrumbItem}>
+                  <Link href="/" className={styles.breadcrumbLink}>
+                    <svg 
+                      className={styles.homeIcon} 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    >
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    
+                  </Link>
+                </li>
+                <li className={styles.breadcrumbSeparator}>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </li>
+                <li className={styles.breadcrumbItem}>
+                  <Link href="/projects" className={styles.breadcrumbLink}>
+                    <span>Projects</span>
+                  </Link>
+                </li>
+                <li className={styles.breadcrumbSeparator}>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </li>
+                <li className={`${styles.breadcrumbItem} ${styles.active}`}>
+                  <span className={styles.breadcrumbCurrent}>
+                    {projectData.title}
+                  </span>
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </section>
+      {/* ===== END BREADCRUMB SECTION ===== */}
+
       {/* Project Header */}
       <div className={styles.projectHeader}>
         <div className={styles.projectMeta}>

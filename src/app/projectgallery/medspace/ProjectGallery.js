@@ -3,72 +3,73 @@
 import { useState, useEffect } from 'react';
 import styles from './ProjectGallery.module.css';
 import Image from 'next/image';
+import Link from 'next/link'; // Make sure to import Link
 
 export default function ProjectGallery() {
   // Sample project data - you can replace this with props or API data
-const projectData = {
-  title: "Commercial Property Upgrade - Physician Clinic Modernization",
-  location: "Saskatoon",
-  year: "2025",
-  description: "This commercial renovation project focuses on the full modernization of a physician clinic to improve functionality, patient experience, and overall aesthetics. The scope includes new flooring and tile installation, structural framing, architectural upgrades, interior decoration, custom cabinetry, and modern finishes. Exterior work covers siding replacement, roofing enhancements, and new door installations. A comprehensive security surveillance system will also be integrated to ensure safety and regulatory compliance. The renovation aims to create a professional, welcoming, and efficient clinical environment for both patients and staff.",
-  features: [
-    "New flooring and tile installation",
-    "Structural framing updates",
-    "Architectural upgrades",
-    "Interior decoration & design",
-    "Custom cabinetry installation",
-    "Modern finishes throughout",
-    "Siding replacement",
-    "Roofing enhancements",
-    "New door installations",
-    "Security surveillance integration"
-  ],
+  const projectData = {
+    title: "Commercial Property Upgrade - Physician Clinic Modernization",
+    location: "Saskatoon",
+    year: "2025",
+    description: "This commercial renovation project focuses on the full modernization of a physician clinic to improve functionality, patient experience, and overall aesthetics. The scope includes new flooring and tile installation, structural framing, architectural upgrades, interior decoration, custom cabinetry, and modern finishes. Exterior work covers siding replacement, roofing enhancements, and new door installations. A comprehensive security surveillance system will also be integrated to ensure safety and regulatory compliance. The renovation aims to create a professional, welcoming, and efficient clinical environment for both patients and staff.",
+    features: [
+      "New flooring and tile installation",
+      "Structural framing updates",
+      "Architectural upgrades",
+      "Interior decoration & design",
+      "Custom cabinetry installation",
+      "Modern finishes throughout",
+      "Siding replacement",
+      "Roofing enhancements",
+      "New door installations",
+      "Security surveillance integration"
+    ],
     images: [
-    { 
-      id: 1, 
-      src: "/images/projects/commercial/1.jpg", 
-      alt: "AWK Corporation physician clinic reception area renovation with modern seating",
-      category: "interior" 
-    },
-    { 
-      id: 2, 
-      src: "/images/projects/commercial/2.jpg", 
-      alt: "AWK Corporation medical examination room with new cabinetry and equipment",
-      category: "medical" 
-    },
-    { 
-      id: 3, 
-      src: "/images/projects/commercial/3.jpg", 
-      alt: "AWK Corporation commercial building exterior with new siding and doors",
-      category: "exterior" 
-    },
-    { 
-      id: 4, 
-      src: "/images/projects/commercial/4.jpg", 
-      alt: "AWK Corporation structural framing work for clinic interior walls",
-      category: "structural" 
-    },
-    { 
-      id: 5, 
-      src: "/images/projects/commercial/5.jpg", 
-      alt: "AWK Corporation flooring installation with modern tiles in clinic",
-      category: "flooring" 
-    },
-    { 
-      id: 6, 
-      src: "/images/projects/commercial/6.jpg", 
-      alt: "AWK Corporation custom cabinetry installation in medical storage area",
-      category: "cabinetry" 
-    },
-    { 
-      id: 7, 
-      src: "/images/projects/commercial/7.jpg", 
-      alt: "AWK Corporation security camera installation for clinic surveillance system",
-      category: "security" 
-    }
-  ],
-  categories: ["all", "exterior", "interior", "structural", "medical", "security", "flooring", "cabinetry"]
-};
+      { 
+        id: 1, 
+        src: "/images/projects/commercial/1.jpg", 
+        alt: "AWK Corporation physician clinic reception area renovation with modern seating",
+        category: "interior" 
+      },
+      { 
+        id: 2, 
+        src: "/images/projects/commercial/2.jpg", 
+        alt: "AWK Corporation medical examination room with new cabinetry and equipment",
+        category: "medical" 
+      },
+      { 
+        id: 3, 
+        src: "/images/projects/commercial/3.jpg", 
+        alt: "AWK Corporation commercial building exterior with new siding and doors",
+        category: "exterior" 
+      },
+      { 
+        id: 4, 
+        src: "/images/projects/commercial/4.jpg", 
+        alt: "AWK Corporation structural framing work for clinic interior walls",
+        category: "structural" 
+      },
+      { 
+        id: 5, 
+        src: "/images/projects/commercial/5.jpg", 
+        alt: "AWK Corporation flooring installation with modern tiles in clinic",
+        category: "flooring" 
+      },
+      { 
+        id: 6, 
+        src: "/images/projects/commercial/6.jpg", 
+        alt: "AWK Corporation custom cabinetry installation in medical storage area",
+        category: "cabinetry" 
+      },
+      { 
+        id: 7, 
+        src: "/images/projects/commercial/7.jpg", 
+        alt: "AWK Corporation security camera installation for clinic surveillance system",
+        category: "security" 
+      }
+    ],
+    categories: ["all", "exterior", "interior", "structural", "medical", "security", "flooring", "cabinetry"]
+  };
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [filter, setFilter] = useState('all');
@@ -121,6 +122,79 @@ const projectData = {
 
   return (
     <div className={styles.projectGallery}>
+      {/* ===== BREADCRUMB SECTION WITHOUT HERO ===== */}
+      <section className={styles.pageBreadcrumb}>
+        <div className="container">
+          <div className={styles.breadcrumbContainer}>
+            <nav className={styles.breadcrumbNav} aria-label="Breadcrumb">
+              <ol className={styles.breadcrumbList}>
+                <li className={styles.breadcrumbItem}>
+                  <Link href="/" className={styles.breadcrumbLink}>
+                    <svg 
+                      className={styles.homeIcon} 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    >
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    
+                  </Link>
+                </li>
+                <li className={styles.breadcrumbSeparator}>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </li>
+                <li className={styles.breadcrumbItem}>
+                  <Link href="/projects" className={styles.breadcrumbLink}>
+                    <span>Projects</span>
+                  </Link>
+                </li>
+                <li className={styles.breadcrumbSeparator}>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </li>
+                <li className={`${styles.breadcrumbItem} ${styles.active}`}>
+                  <span className={styles.breadcrumbCurrent}>
+                    {projectData.title}
+                  </span>
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </section>
+      {/* ===== END BREADCRUMB SECTION ===== */}
+
       {/* Project Header */}
       <div className={styles.projectHeader}>
         <div className={styles.projectMeta}>
