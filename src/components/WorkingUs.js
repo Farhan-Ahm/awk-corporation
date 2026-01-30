@@ -1,5 +1,6 @@
 'use client';
 import styles from './WorkingUs.module.css';
+import Link from 'next/link';
 
 export default function WorkingUs() {
   return (
@@ -13,8 +14,10 @@ export default function WorkingUs() {
             <h2 className={styles.title}>Ready to start your project with AWK?</h2>
           </div>
           <div className="col-lg-4 text-end">
-            <button className={styles.appointmentBtn}>MAKE AN APPOINTMENT</button>
-          </div>
+  <Link href="/appointment" className={styles.appointmentBtn}>
+    MAKE AN APPOINTMENT
+  </Link>
+</div>
         </div>
       </div>
     </section>

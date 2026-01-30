@@ -38,7 +38,10 @@ export default function Hero() {
               CONTACT US →
             </button>
           </Link>
-            <button className={styles.btnSecondary}>BOOK AN APPOINTMENT →</button>
+          <Link href="/appointment">
+          <button className={styles.btnSecondary}>BOOK AN APPOINTMENT →</button>
+          </Link>
+            
           </div>
         </div>
       </div>
