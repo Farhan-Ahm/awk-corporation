@@ -370,6 +370,30 @@
   color: #721c24;
 }
 
+.successMessage .statusIcon svg {
+  color: #0f5132;
+  stroke: #0f5132;
+}
+
+.errorMessage .statusIcon svg {
+  color: #721c24;
+  stroke: #721c24;
+}
+
+/* Success animation */
+.successMessage {
+  animation: slideDown 0.4s ease-out, pulseSuccess 2s ease-in-out;
+}
+
+@keyframes pulseSuccess {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(209, 231, 221, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(209, 231, 221, 0);
+  }
+}
+
 .statusIcon {
   flex-shrink: 0;
 }

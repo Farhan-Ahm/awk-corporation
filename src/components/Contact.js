@@ -33,6 +33,18 @@ export default function Contact() {
     };
   }, []);
 
+   // ADD THIS NEW useEffect HERE - for auto-clearing success messages
+  useEffect(() => {
+    if (submitStatus?.type === 'success') {
+      const timer = setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus]);
+
+
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -134,7 +146,7 @@ export default function Contact() {
 
       const data = await response.json();
 
-      if (data.success) {
+      if (response.ok) {
         setSubmitStatus({
           type: 'success',
           message: data.message,
@@ -366,6 +378,7 @@ export default function Contact() {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
+                            className={styles.successIcon}
                           >
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
@@ -381,6 +394,7 @@ export default function Contact() {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
+                            className={styles.errorIcon}
                           >
                             <circle cx="12" cy="12" r="10"></circle>
                             <line x1="12" y1="8" x2="12" y2="12"></line>
