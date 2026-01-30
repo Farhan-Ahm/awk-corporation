@@ -26,9 +26,10 @@ export default function Hero() {
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>SINCE 2016</div>
           <h1>
-            Engineering <span className={styles.highlight}>the Plan. </span>
-            Procuring <span className={styles.highlight}>the Best. </span>
-            Constructing <span className={styles.highlight}>Success</span>
+            Transforming <span className={styles.highlight}>
+            Vision into Reality </span>
+            Through Integrated Engineering 
+            & Construction Management
      
 
           </h1>

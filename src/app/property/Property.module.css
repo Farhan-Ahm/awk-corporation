@@ -1,3 +1,438 @@
+/* ===== CREATIVE EXPLORE BANNER ===== */
+.exploreBannerSection {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 20px 0;
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.exploreBannerSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #E40C29 0%, #2C3E50 100%);
+}
+
+.exploreContent {
+  padding-right: 30px;
+}
+
+.exploreHeading {
+  font-size: 36px;
+  font-weight: 800;
+  color: #2C3E50;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.exploreSubheading {
+  color: #666;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.serviceHighlights {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.highlightItem:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: #E40C29;
+}
+
+.highlightIcon {
+  width: 50px;
+  height: 50px;
+  background: rgba(228, 12, 41, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlightIcon svg {
+  color: #E40C29;
+  width: 24px;
+  height: 24px;
+}
+
+.highlightItem h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2C3E50;
+  margin-bottom: 5px;
+}
+
+.highlightItem p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+.ctaBox {
+  background: linear-gradient(135deg, #2C3E50 0%, #1a252f 100%);
+  padding: 40px 30px;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #E40C29;
+}
+
+.ctaIcon {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+}
+
+.ctaIcon svg {
+  color: white;
+  width: 32px;
+  height: 32px;
+}
+
+.ctaBox h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.ctaBox p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #E40C29;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  width: 100%;
+  border: 2px solid #E40C29;
+}
+
+.ctaButton:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(228, 12, 41, 0.3);
+}
+
+.ctaButton svg {
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover svg {
+  transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .exploreBannerSection {
+    padding: 40px 0;
+    margin: 40px 0;
+  }
+  
+  .exploreContent {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+  
+  .exploreHeading {
+    font-size: 30px;
+  }
+  
+  .exploreSubheading {
+    font-size: 16px;
+  }
+  
+  .ctaBox {
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .exploreBannerSection {
+    padding: 30px 0;
+    margin: 30px 0;
+  }
+  
+  .exploreHeading {
+    font-size: 26px;
+  }
+  
+  .highlightItem {
+    padding: 15px;
+  }
+  
+  .highlightIcon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .highlightIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .highlightItem h4 {
+    font-size: 16px;
+  }
+  
+  .ctaBox {
+    padding: 25px 20px;
+  }
+  
+  .ctaBox h3 {
+    font-size: 20px;
+  }
+}
+
+/* ===== SERVICE TILES STYLES ===== */
+.servicesTilesContainer {
+  padding: 20px 0;
+}
+
+.serviceTile {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 30px 25px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.serviceTile:hover {
+  background: #2C3E50;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #2C3E50;
+}
+
+.tileIcon {
+  width: 60px;
+  height: 60px;
+  background: rgba(228, 12, 41, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tileIcon svg {
+  color: #E40C29;
+  width: 28px;
+  height: 28px;
+}
+
+.serviceTile:hover .tileIcon {
+  background: white;
+}
+
+.serviceTile:hover .tileIcon svg {
+  color: #2C3E50;
+}
+
+.tileTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2C3E50;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.tileTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #E40C29;
+  transition: width 0.3s ease;
+}
+
+.serviceTile:hover .tileTitle::after {
+  width: 100%;
+  background: white;
+}
+
+.serviceTile:hover .tileTitle {
+  color: white;
+}
+
+.tileContent {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.serviceTile:hover .tileContent {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tileContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tileContent li {
+  padding: 6px 0;
+  position: relative;
+  padding-left: 24px;
+}
+
+.tileContent li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #E40C29;
+  font-weight: bold;
+}
+
+.serviceTile:hover .tileContent li::before {
+  color: white;
+}
+
+.tileBadge {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: rgba(228, 12, 41, 0.1);
+  color: #E40C29;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.serviceTile:hover .tileBadge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Animation for tiles */
+.serviceTile {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.serviceTile:nth-child(1) { animation-delay: 0.1s; }
+.serviceTile:nth-child(2) { animation-delay: 0.2s; }
+.serviceTile:nth-child(3) { animation-delay: 0.3s; }
+.serviceTile:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments for service tiles */
+@media (max-width: 992px) {
+  .serviceTile {
+    padding: 25px 20px;
+    margin-bottom: 20px;
+  }
+  
+  .tileTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .tileIcon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+  
+  .tileIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceTile {
+    padding: 20px;
+  }
+  
+  .tileTitle {
+    font-size: 18px;
+  }
+  
+  .tileContent {
+    font-size: 13px;
+  }
+  
+  .tileBadge {
+    top: 15px;
+    right: 15px;
+    padding: 4px 12px;
+    font-size: 10px;
+  }
+}
+
 /* Property.module.css */
 
 .aboutSection {

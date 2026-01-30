@@ -307,7 +307,7 @@ export default function Appointment() {
 
           <h1 className={styles.heroTitle}>BOOK YOUR CONSULTATION</h1>
           <p className={styles.heroBreadcrumb}>
-            Lets discuss how we can streamline your infrastructure, construction, and procurement needs.
+            Lets discuss how we can help bring your vision to life.
           </p>
         </div>
       </section>
