@@ -27,6 +27,11 @@ export default function Projects() {
       title: 'WonderKids Development Center',
       link: '/projectgallery/wonderkids'
     },
+    { 
+      img: '/images/projects/BlueSkin/8.jpeg', 
+      title: 'Condo Vapour Barrier Installation',
+      link: '/projectgallery/BlueSkin'
+    },
   ];
 
   return (
@@ -40,7 +45,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="col-md-6 scroll-animate"
+              className="col-md-4 scroll-animate"
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
               <div
